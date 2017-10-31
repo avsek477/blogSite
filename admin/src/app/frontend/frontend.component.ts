@@ -6,5 +6,5 @@ import {Component} from "@angular/core";
 })
 
 export class FrontendComponent {
-
+// the front end starts here
 }
