@@ -6,5 +6,4 @@ npm-debug.log
 .idea
 /atlassian-ide-plugin.xml
 /logs/*
-
-
+npm-shrinkwrap.json
