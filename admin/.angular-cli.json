@@ -37,7 +37,7 @@
         "../node_modules/tether/dist/js/tether.js",
         "../node_modules/bootstrap/dist/js/bootstrap.min.js",
         "assets/plugins/Chart.bundle.js",
-        "assets/inlineScripts",
+        "assets/inlineScripts.js",
         "assets/plugins/tinymce/tinymce.js",
         "assets/plugins/tinymce/themes/modern/theme.js",
         "assets/plugins/tinymce/plugins/media/plugin.js",

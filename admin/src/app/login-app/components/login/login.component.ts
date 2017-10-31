@@ -105,7 +105,7 @@ export class LoginComponent implements OnInit {
 
   forwardAfterSuccess(token: string, userInfo: UserModel) {
     Config.setLoggedInToken(token, userInfo);
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/admin/dashboard']);
   }
 
   onVerifyTfa() {

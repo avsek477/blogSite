@@ -4,82 +4,82 @@ export var menuItem = [
     icon: "",
     route: "",
     menuItem: [{
-      route: "/user-management",
+      route: "user-management",
       title: "User",
       icon: "fa-user"
     },
       {
-        route: "/role",
+        route: "role",
         title: "Role",
         icon: "fa-shield"
       },
       {
-        route: "/access",
+        route: "access",
         title: "Api Access",
         icon: "fa-user"
       },
       {
-        route: "/blog",
+        route: "blog",
         title: "Blog",
         icon: "fa-newspaper-o"
       },
       {
-        route: "/contact",
+        route: "contact",
         title: "Contact List",
         icon: "fa-list"
       },
       {
-        route: "/email-template",
+        route: "email-template",
         title: "Email Template",
         icon: "fa-envelope"
       },
       {
-        route: "/event",
+        route: "event",
         title: "Event Management",
         icon: "fa-calendar"
       },
       {
-        route: "/errorlog",
+        route: "errorlog",
         title: "Error Log",
         icon: "fa-stack-overflow"
       },
       {
-        route: "/html",
+        route: "html",
         title: "Html Content",
         icon: "fa-html5"
       },
       {
-        route: "/imagegallery",
+        route: "imagegallery",
         title: "Image Gallery",
         icon: "fa-picture-o"
       },
       {
-        route: "/imageslider",
+        route: "imageslider",
         title: "Image Slider",
         icon: "fa-play"
       },
       {
-        route: "/news",
+        route: "news",
         title: "News",
         icon: "fa-newspaper-o"
       },
       {
-        route: "/partner",
+        route: "partner",
         title: "Partners",
         icon: "fa-link"
       },
       {
-        route: "/team",
+        route: "team",
         title: "Team Management",
         icon: "fa-users"
       },
       {
-        route: "/testimonial",
+        route: "testimonial",
         title: "Testimonial",
         icon: "fa-comment-o"
       },
       {
-        route: "/token",
+        route: "token",
         title: "Token",
         icon: "fa-ticket"
       }]
@@ -89,33 +89,33 @@ export var menuItem = [
     route: "",
     icon: "fa-wrench",
     menuItem: [{
-      route: "/cloudinary",
+      route: "cloudinary",
       title: "Cloudinary",
       icon: "fa-cloud"
     },
       {
-        route: "/comment",
+        route: "comment",
         title: "Comments",
         icon: "fa-commenting-o"
       },
       {
-        route: "/email-service",
+        route: "email-service",
         title: "Email Service",
         icon: "fa-cogs"
       },
       {
-        route: "/analytics",
+        route: "analytics",
         title: "Google Analytics",
         icon: "fa-line-chart"
       },
 
       {
-        route: "/googlemap",
+        route: "googlemap",
         title: "Google Map",
         icon: "fa-map-o"
       },
       {
-        route: "/organization",
+        route: "organization",
         title: "Org. Information",
         icon: "fa-building-o"
       }

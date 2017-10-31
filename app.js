@@ -1,5 +1,3 @@
-'use strict';
-
 var express = require('express'),
     path = require('path'),
     app = express(),
@@ -81,39 +79,7 @@ app.set('view engine', 'hbs');
 
 var admin = express();
 
-if (app.get('env') === "development" ) {
-    console.log('development environment');
-    logWriter.init(app);
-    redisStoreOpts = {
-        host: redisConfig.development.host,
-        port: redisConfig.development.port,
-        ttl: (20 * 60), // TTL of 20 minutes represented in seconds
-        db: redisConfig.development.db,
-        pass: redisConfig.development.pass
-    };
-     app.use("/", express.static(__dirname + '/public/'));
-}
-else if (app.get('env') === "production" || app.get('env') === "test") {
-    console.log('production environment');
-    redisStoreOpts = {
-        host: redisConfig.production.host,
-        port: redisConfig.production.port,
-        ttl: (20 * 60), // TTL of 20 minutes represented in seconds
-        db: redisConfig.production.db,
-        pass: redisConfig.production.pass
-    };
-    app.use(minify());
-    app.enable('view cache');
-    var adminDistRootPath = path.join(__dirname, '/admin/dist/');
-    admin.use("/", express.static(adminDistRootPath, {maxAge: 86400000}));
-    app.use("/", express.static(path.join(__dirname, '/public/'), {maxAge: 86400000}));
-    app.use('/dist', express.static(path.join(__dirname, '/admin/dist/'), {maxAge: 86400000}));
-    app.use('/assets', express.static(path.join(__dirname, '/admin/dist/assets/'), {maxAge: 86400000}));
-    admin.get("/*", function (req, res) {
-        res.render(path.join(adminDistRootPath, 'index.html'), {layout: false});
-    });
 
-}
 app.use("/admin", admin);
 
 app.use("/docs", express.static(__dirname + "/public/apidoc/"));
@@ -150,7 +116,7 @@ app.use(expressValidator({
 
 
 var sessionOpts = {
-    store: new RedisStore(redisStoreOpts),//if in production environment, uncomment it
+    // store: new RedisStore(redisStoreOpts),//if in production environment, uncomment it
     name: 'id', // <-- a generic name for the session id
     secret: process.env.SESSION_SECRET,
     resave: false,
@@ -178,6 +144,38 @@ configureAppSecurity.init(app);
 //Map the Routes
 router.init(app);
 
+if (app.get('env') === "development" ) {
+    console.log('development environment');
+    logWriter.init(app);
+    redisStoreOpts = {
+        host: redisConfig.development.host,
+        port: redisConfig.development.port,
+        ttl: (20 * 60), // TTL of 20 minutes represented in seconds
+        db: redisConfig.development.db,
+        pass: redisConfig.development.pass
+    };
+    app.use("/", express.static(__dirname + '/public/'));
+}
+else if (app.get('env') === "production" || app.get('env') === "test") {
+    console.log('production environment');
+    redisStoreOpts = {
+        host: redisConfig.production.host,
+        port: redisConfig.production.port,
+        ttl: (20 * 60), // TTL of 20 minutes represented in seconds
+        db: redisConfig.production.db,
+        pass: redisConfig.production.pass
+    };
+    app.use(minify());
+    app.enable('view cache');
+    var adminDistRootPath = path.join(__dirname, '/admin/dist/');
+    app.use("/", express.static(adminDistRootPath, {maxAge: 86400000}));
+    app.use("/", express.static(path.join(__dirname, '/public/'), {maxAge: 86400000}));
+    app.use('/dist', express.static(path.join(__dirname, '/admin/dist/'), {maxAge: 86400000}));
+    app.use('/assets', express.static(path.join(__dirname, '/admin/dist/assets/'), {maxAge: 86400000}));
+    app.get("/*", function (req, res) {
+        res.render(path.join(adminDistRootPath, 'index.html'), {layout: false});
+    });
+}
 // development and production error handler
 // no stacktraces leaked to user
 if (app.get('env') === 'development' || app.get('env') === 'production') {
