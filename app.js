@@ -140,9 +140,9 @@ app.use(passport.initialize());
 
 configureAppSecurity.init(app);
 
-
 //Map the Routes
 router.init(app);
+
 
 if (app.get('env') === "development" ) {
     console.log('development environment');
@@ -176,6 +176,7 @@ else if (app.get('env') === "production" || app.get('env') === "test") {
         res.render(path.join(adminDistRootPath, 'index.html'), {layout: false});
     });
 }
+
 // development and production error handler
 // no stacktraces leaked to user
 if (app.get('env') === 'development' || app.get('env') === 'production') {
