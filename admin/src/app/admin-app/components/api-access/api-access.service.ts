@@ -11,9 +11,9 @@ export class ApiAccessService {
     progress:any;
 
     constructor(private _http:Http) {
-        this.progress = Observable.create(observer => {
-            this.progressObserver = observer
-        }).share();
+        // this.progress = Observable.create(observer => {
+        //     this.progressObserver = observer
+        // }).share();
     }
 
     /* News Category */

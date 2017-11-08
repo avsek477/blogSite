@@ -13,9 +13,9 @@ export class ImageSliderService {
     progress:any;
 
     constructor(private _http:Http, private fileService:FileOperrationService) {
-        this.progress = Observable.create(observer => {
-            this.progressObserver = observer
-        }).share();
+        // this.progress = Observable.create(observer => {
+        //     this.progressObserver = observer
+        // }).share();
     }
 
     deleteImage(fileName:string, orgExt:string, path:string):Observable < any > {

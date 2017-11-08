@@ -81,7 +81,6 @@ export class LoginComponent implements OnInit {
   }
 
   loginHandler(res: LoginResponse) {
-    console.log("login",res)
     if (res.success) {
       this.slide = "collapse";
       if (res.twoFactorAuthEnabled) {
