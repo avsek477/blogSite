@@ -4,20 +4,18 @@ import {
 } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HttpModule, Http, XHRBackend, RequestOptions} from '@angular/http';
-import {ImageUploader} from "./components/image-uploader.component";
-import {DocumentUploader} from "./components/doc-uploader.component";
-import {FormControlMessages} from "./components/control-valdation-message.component";
-import {Alert} from "./components/alert/alert";
-import {TinyEditor} from "./components/tinymce.component";
+import {ImageUploader} from './components/image-uploader.component';
+import {DocumentUploader} from './components/doc-uploader.component';
+import {FormControlMessages} from './components/control-valdation-message.component';
+import {Alert} from './components/alert/alert';
+import {TinyEditor} from './components/tinymce.component';
 import {ACCORDION_PROVIDERS} from './components/accordion/accordionItem';
-import {DropdownModule} from './components/ng2-bootstrap/ng2-bootstrap'; //provider
-import {TypeaheadModule} from './components/ng2-bootstrap/ng2-bootstrap';
 import {FadeInDirective} from './directives/fadeInDirective';
-import{ProcessingDirective} from './directives/processing.directive';
-import{HttpInterceptor} from './services/interceptHttp.service';
+import {ProcessingDirective} from './directives/processing.directive';
+import {HttpInterceptor} from './services/interceptHttp.service';
 import {FileOperrationService} from './services/fileOperation.service';
-import {Router, RouterModule} from "@angular/router";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {Router, RouterModule} from '@angular/router';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 /*Prime Module*/
@@ -29,9 +27,17 @@ import {ChartModule} from 'primeng/primeng';
 import {MessagesModule} from 'primeng/primeng';
 import {TabViewModule} from 'primeng/primeng';
 import {MultiSelectModule} from 'primeng/primeng';
-import {MaterialModule} from "@angular/material";
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+
 @NgModule({
-  imports: [CommonModule, RouterModule, HttpModule, FormsModule, ReactiveFormsModule, DropdownModule, MaterialModule],
+  imports: [CommonModule, RouterModule, HttpModule, FormsModule, ReactiveFormsModule, MatCheckboxModule, MatSlideToggleModule,
+            MatAutocompleteModule, MatFormFieldModule, MatInputModule],
   declarations: [FadeInDirective, ProcessingDirective,
     ImageUploader, DocumentUploader, FormControlMessages,
     Alert, TinyEditor, ACCORDION_PROVIDERS,
@@ -40,9 +46,10 @@ import {MaterialModule} from "@angular/material";
     FadeInDirective, ProcessingDirective,
     ImageUploader, DocumentUploader, FormControlMessages,
     Alert, TinyEditor, ACCORDION_PROVIDERS,
-    CommonModule, FormsModule, HttpModule, ReactiveFormsModule, DropdownModule,
+    CommonModule, FormsModule, HttpModule, ReactiveFormsModule,
     PasswordModule, RouterModule, CalendarModule, PaginatorModule, DialogModule, ChartModule,
-    MessagesModule, TabViewModule, MultiSelectModule, MaterialModule]
+    MessagesModule, TabViewModule, MultiSelectModule, MatCheckboxModule, MatSlideToggleModule,
+    MatAutocompleteModule, MatFormFieldModule, MatInputModule]
 })
 export class SharedModule {
 

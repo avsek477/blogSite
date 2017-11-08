@@ -1,7 +1,7 @@
 import {LoginService} from  './login.service'
 import {LoginModel, LoginResponse} from './login.model';
 import {LoginComponent}from "./login.component";
-import {Observable} from "rxjs/Rx";
+import {Observable} from "rxjs/Observable";
 import {
   inject,
   async,

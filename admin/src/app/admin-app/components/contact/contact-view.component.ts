@@ -33,7 +33,8 @@ export class ContactViewComponent implements OnInit {
   }
 
   handleDetail(objContact: ContactModel) {
-    objContact.addedOn = moment(objContact.addedOn).format('LLLL');
+    console.log(typeof objContact.addedOn, objContact.addedOn)
+    // objContact.addedOn = moment(objContact.addedOn).format('LLLL');
     this.objContact = objContact;
 
   }

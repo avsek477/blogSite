@@ -314,7 +314,7 @@ export class LastWeekVsThisWeekAnalysisChart implements OnChanges {
       'end-date': moment().day(6).subtract(1, 'week')
         .format('YYYY-MM-DD')
     });
-    Promise.all<string>([thisWeek, lastWeek])
+    Promise.all<any>([thisWeek, lastWeek])
       .then((results:any)=> {
           let data1 = [];
           let data2 = [];

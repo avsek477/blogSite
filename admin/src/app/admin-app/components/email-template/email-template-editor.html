@@ -55,19 +55,19 @@
             </div>
             <div class="form-group">
                 <label>
-                    <md-checkbox [checked]="objEmailTemp.active" formControlName="active"
+                    <mat-checkbox [checked]="objEmailTemp.active" formControlName="active"
                                  [(ngModel)]="objEmailTemp.active">
                         Active
-                    </md-checkbox>
+                    </mat-checkbox>
                 </label>
             </div>
 
             <div class="form-group">
                 <label>
-                    <md-checkbox [checked]="objEmailTemp.attachmentAvailabilityStatus" formControlName="attachment"
+                    <mat-checkbox [checked]="objEmailTemp.attachmentAvailabilityStatus" formControlName="attachment"
                                  [(ngModel)]="objEmailTemp.attachmentAvailabilityStatus">
                         Allow Attachement
-                    </md-checkbox>
+                    </mat-checkbox>
                 </label>
             </div>
             <button type="submit" class="btn btn-primary" processing><i class="fa fa-floppy-o"></i>

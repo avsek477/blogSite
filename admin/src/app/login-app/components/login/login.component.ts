@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
   userId: string;
   formImage: string = Config.LoginImage;
   slide: string = "collapse";
-  adminRoute: string = "/dashboard";
+  adminRoute: string = "/admin/dashboard";
 
   ngOnInit() {
     if (Config.getAuthToken()) {
@@ -81,6 +81,7 @@ export class LoginComponent implements OnInit {
   }
 
   loginHandler(res: LoginResponse) {
+    console.log("login",res)
     if (res.success) {
       this.slide = "collapse";
       if (res.twoFactorAuthEnabled) {
@@ -90,7 +91,7 @@ export class LoginComponent implements OnInit {
         this.userId = res.userId;
       }
       else {
-        this.forwardAfterSuccess(res.token, res.userInfo);
+        this.forwardAfterSuccess(res.token, res.userInfo, res.tokenExpiryDate);
       }
     }
     else {
@@ -103,9 +104,9 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  forwardAfterSuccess(token: string, userInfo: UserModel) {
-    Config.setLoggedInToken(token, userInfo);
-    this.router.navigate(['/admin/dashboard']);
+  forwardAfterSuccess(token: string, userInfo: UserModel, tokenExpiryDate: string) {
+    Config.setLoggedInToken(token, userInfo, tokenExpiryDate);
+    this.router.navigate(['admin/dashboard']);
   }
 
   onVerifyTfa() {

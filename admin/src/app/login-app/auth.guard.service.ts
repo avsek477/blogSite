@@ -28,7 +28,7 @@ export class AuthGuardService implements CanActivate, CanActivateChild,CanLoad {
   }
 
   checkLogin(url: string): boolean {
-    if (Config.getAuthToken()) {
+    if (Config.getAuthToken() && Config.getAuthTokenValid()) {
       Config.removeAdminRouteToken();
       return true;
     }
@@ -37,6 +37,7 @@ export class AuthGuardService implements CanActivate, CanActivateChild,CanLoad {
     /*
      Store the attempted URL for redirecting
      */
+    this._loginService.logout();
     this._loginService.redirectUrl = url;
     // Config.setAdminRouteToken(state.url);
     this.router.navigate(['/login']);

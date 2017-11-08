@@ -1,6 +1,6 @@
 import {CloudinaryService} from  './cloudinary.service'
 import {CloudinaryModel} from './cloudinary.model';
-import {Observable} from "rxjs/Rx";
+import {Observable} from "rxjs/Observable";
 import {
   inject,
   async,

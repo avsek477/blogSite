@@ -6,8 +6,8 @@
         <div class="col-lg-6">
             <div class="form-group">
                 <label>Enable Two Factor Authentication</label>
-                <md-slide-toggle #tfaEnable (change)="toggleEnable($event.checked)"
-                                 [checked]="tfaEnabled"></md-slide-toggle>
+                <mat-slide-toggle #tfaEnable (change)="toggleEnable($event.checked)"
+                                 [checked]="tfaEnabled"></mat-slide-toggle>
             </div>
             <button type="button" *ngIf="!hideCancel" (click)="triggerCancelForm()" class="btn btn-danger">Cancel</button>
         </div>

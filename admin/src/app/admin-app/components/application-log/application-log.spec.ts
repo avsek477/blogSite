@@ -1,7 +1,7 @@
 import {ApplicationLogService} from  './application-log.service'
 import {ApplicationLogModel, ApplicationLogResponse} from './application-log.model';
 import {ApplicationLogComponent}from "./application-log-list.component";
-import {Observable} from "rxjs/Rx";
+import {Observable} from "rxjs/Observable";
 import {
   inject,
   async,

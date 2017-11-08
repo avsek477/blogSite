@@ -11,6 +11,7 @@ export class LoginResponse {
     token:string;
     status:string;
     isToken:boolean;
+    tokenExpiryDate:string;
     twoFactorAuthEnabled:boolean;
     userId:string;
     userInfo:UserModel;

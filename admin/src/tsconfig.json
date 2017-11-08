@@ -26,6 +26,7 @@
     "app/shared/components/ng2-bootstrap/components/common.ts"
   ],
   "angularCompilerOptions": {
+    "preserveWhitespaces": false,
     "genDir": "aot"
   }
 }
